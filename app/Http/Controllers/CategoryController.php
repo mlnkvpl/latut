@@ -39,7 +39,8 @@ class CategoryController extends Controller
         //  dd($id);
         $category = Category::find($id);
 
-        $parents = Category::all();
+        // $parents = Category::all();
+        $parents = Category::where('id', '!=', $id)->get();
         //  dd($category);
         return view('wip.category.edit',
             [
@@ -57,7 +58,8 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->description = $request->description;
         $category->parent_category_id = $request->parent_category_id;
-        $parents=Category::all();
+        $parents=Category::where('id','!=',$request->id)->get();
+        
 
         // dump($category);
         $category->save();
