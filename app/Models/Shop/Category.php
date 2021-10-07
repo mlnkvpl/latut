@@ -14,4 +14,15 @@ class Category extends Model
         'name',
         'description'
     ];
+
+    public function parent(){
+
+        return $this->belongsTo(Category::class,'parent_category_id');
+    }
+    
+    public function subcategories()
+    {
+
+        return $this->hasMany(Category::class, 'parent_category_id');
+    }
 }

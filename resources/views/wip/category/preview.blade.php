@@ -1,6 +1,6 @@
-@php
+{{-- @php
   dump($category);
-@endphp
+@endphp --}}
 
 <p>{{ $category->name }}</p>
 <p>{{ $category->description }}</p>
