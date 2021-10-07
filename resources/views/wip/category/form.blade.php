@@ -1,6 +1,10 @@
 
 <p>form to test category controller and model</p>
 
+@if ( $category )
+    @include('wip.category.preview')
+@endif
+
 <form method="POST" action="/category">
     @csrf
 
