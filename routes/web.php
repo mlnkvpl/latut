@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,9 @@ Route::get('/', function () {
 Route::get('/test', function () {
    echo 'test';
 });
+
 Route::get('/category', function () {
     return view('wip.category.form');
 });
+
+Route::post('/category', [\App\Http\Controllers\CategoryController::class,'store']);

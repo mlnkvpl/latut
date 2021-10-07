@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('name', 127);
             $table->text('description');
-            $table->string('image', 1023);
+            $table->string('image', 1023)->nullable();
             $table->timestamps();
         });
     }
