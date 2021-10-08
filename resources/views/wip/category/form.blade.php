@@ -2,8 +2,7 @@
 
 
 @isset($category)
-@include('wip.category.preview')
-
+    @include('wip.category.preview')
 @endisset
 
 <form method="POST" action="/category">
