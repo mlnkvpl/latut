@@ -1,5 +1,5 @@
 @php
-  dump($category);
+  //dump($category);
 @endphp
 
 <p>{{ $category->name }}</p>

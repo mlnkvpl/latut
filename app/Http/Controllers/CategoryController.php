@@ -16,7 +16,7 @@ class CategoryController extends Controller
         ];
         $category = new Category($attributes);
         // dd($category);
-        $category ->save();
+        $category->save();
         return view('wip.category.form', ['category' => $category]);
     }
 }
