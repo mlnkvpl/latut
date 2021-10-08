@@ -1,7 +1,9 @@
 <p>form to test category controller and model</p>
 
+
 @isset($category)
 @include('wip.category.preview')
+
 @endisset
 
 <form method="POST" action="/category">

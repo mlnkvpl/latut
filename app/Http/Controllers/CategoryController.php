@@ -7,15 +7,12 @@ use App\Models\Shop\Category;
 
 class CategoryController extends Controller
 {
-
-    // save products in DB
-    //
-    public function save(Request $request)
+    public function store(Request $request)
     {
         // dd($request);
         $attributes = [
-            'name' => $request->name,
-            'description' => $request->description
+            'name'=>$request->name,
+            'description'=> $request->description
         ];
         $category = new Category($attributes);
         // dd($category);
@@ -59,7 +56,7 @@ class CategoryController extends Controller
         $category->description = $request->description;
         $category->parent_category_id = $request->parent_category_id;
         $parents=Category::where('id','!=',$request->id)->get();
-        
+
 
         // dump($category);
         $category->save();
@@ -72,7 +69,7 @@ class CategoryController extends Controller
     }
 
 
-  
+
 
 
     public function delete(int $id)
