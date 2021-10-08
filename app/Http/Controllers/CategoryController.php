@@ -72,16 +72,7 @@ class CategoryController extends Controller
     }
 
 
-    // update existing product
-    // 
-    // public function update(Request $request)
-    // {
-    //     $category = Category::find($request->id);
-
-    //     $category->update($request->all());
-
-    //     return view('wip.category.edit', ['category' => $category]);
-    // }
+  
 
 
     public function delete(int $id)
