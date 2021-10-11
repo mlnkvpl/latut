@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,9 @@ Route::get('/test', function () {
    echo 'test';
 });
 
+################# Category ############################
+#
+// get method category form 
 Route::get('/category', function () {
     return view('wip.category.form');
 });
@@ -34,3 +38,27 @@ Route::get('/categories', [CategoryController::class, 'view']);
 Route::get('/category/edit/{id}', [CategoryController::class, 'edit']);
 Route::post('/category/edit', [CategoryController::class, 'update']);
 Route::get('/category/delete/{id}', [CategoryController::class, 'delete']);
+
+
+################# Product ############################
+#
+
+// get method product form 
+Route::get('/product/create', function () {
+    return view('wip.product.create_form');
+});
+
+
+// create product 
+Route::post('/product/create', [ProductController::class, 'create']);
+
+// edit product
+Route::get('/product/edit/{product}', [ProductController::class, 'edit']);
+// update product
+Route::post('/product/edit/{product}', [ProductController::class, 'update']);
+
+// delete product
+Route::get('/product/destroy/{product}', [ProductController::class, 'destroy']);
+
+// index product
+Route::get('/product', [ProductController::class, 'index']);
