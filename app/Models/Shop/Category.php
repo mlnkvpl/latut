@@ -15,7 +15,6 @@ class Category extends Model
     ];
 
 
-
     public function parent()
     {
         return $this->belongsTo(Category::class, 'parent_category_id');
@@ -40,9 +39,5 @@ class Category extends Model
     {
         $child->parent_category_id = $this->id;
     }
-
-
-
-
 
 }
