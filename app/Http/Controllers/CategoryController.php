@@ -12,8 +12,10 @@ class CategoryController extends Controller
         // dd($request);
         $attributes = [
             'name'=>$request->name,
-            'description'=> $request->description
+            'description'=> $request->description,
+          
         ];
+
         $category = new Category($attributes);
         // dd($category);
         $category->save();
@@ -42,7 +44,8 @@ class CategoryController extends Controller
         return view('wip.category.edit',
             [
                 'category' => $category,
-                'parents' => $parents
+                'parents' => $parents,
+              
             ]
         );
 
@@ -54,6 +57,7 @@ class CategoryController extends Controller
         $category = Category::find($request->id);
         $category->name = $request->name;
         $category->description = $request->description;
+        $category->preis = $request->preis;
         $category->parent_category_id = $request->parent_category_id;
         $parents=Category::where('id','!=',$request->id)->get();
 
@@ -64,7 +68,8 @@ class CategoryController extends Controller
 
         return view('wip.category.edit', [
             'category' => $category,
-            'parents'=>$parents
+            'parents'=>$parents,
+           
         ]);
     }
 

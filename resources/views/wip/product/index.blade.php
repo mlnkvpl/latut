@@ -13,6 +13,9 @@
         <td>
             <p>{{ $product->description }}</p>
         </td>
+        <td>
+            <p>{{ $product->preis }}</p>
+        </td>
         <td><a href="/product/edit/{{ $product->id }}">edit</a></td>
         <td><a href="/product/destroy/{{ $product->id }}">delete</a></td>
 

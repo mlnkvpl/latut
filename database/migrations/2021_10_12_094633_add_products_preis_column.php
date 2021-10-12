@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSubcategoryIdtocategoryTable extends Migration
+class AddProductsPreisColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddSubcategoryIdtocategoryTable extends Migration
      */
     public function up()
     {
-        Schema::table('categories', function (Blueprint $table) {
-            $table->foreignId('parent_category_id')->nullable();
+        Schema::table('products', function (Blueprint $table) {
+            $table->double('preis')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ class AddSubcategoryIdtocategoryTable extends Migration
      */
     public function down()
     {
-        Schema::table('categories', function (Blueprint $table) {
-            $table->dropColumn('parent_category_id');
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropColumn('preis');
         });
     }
 }

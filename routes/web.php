@@ -32,7 +32,7 @@ Route::get('/category', function () {
     return view('wip.category.form');
 });
 
-Route::post('/category', [CategoryController::class,'save']);
+Route::post('/category', [CategoryController::class,'store']);
 
 Route::get('/categories', [CategoryController::class, 'view']);
 Route::get('/category/edit/{id}', [CategoryController::class, 'edit']);

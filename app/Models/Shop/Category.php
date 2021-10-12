@@ -11,10 +11,11 @@ class Category extends Model
 
     protected $fillable = [
         'name',
-        'description'
+        'description',
+        'preis'
     ];
 
-
+    ####################### relation ########################
     public function parent()
     {
         return $this->belongsTo(Category::class, 'parent_category_id');
@@ -25,19 +26,20 @@ class Category extends Model
         return $this->hasMany(Category::class, 'parent_category_id');
     }
 
-    public function products(){
+    public function products()
+    {
 
-        return $this->hasMany(Ptoduct::class,'category_id');
+        return $this->hasMany(Ptoduct::class, 'category_id');
     }
 
+    ####################### 
     public function setParent(Category $parent)
     {
-        $this->parent_category_id=$parent->id;
+        $this->parent_category_id = $parent->id;
     }
 
     public function addChild(Category $child)
     {
         $child->parent_category_id = $this->id;
     }
-
 }

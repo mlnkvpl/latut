@@ -5,3 +5,4 @@
 
 <p>{{ $category->name }}</p>
 <p>{{ $category->description }}</p>
+

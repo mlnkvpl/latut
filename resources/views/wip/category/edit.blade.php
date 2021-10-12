@@ -1,7 +1,7 @@
 <p>form to test category controller and model</p>
 
 @isset($category)
-    @include('wip.category.preview')
+@include('wip.category.preview')
 @endisset
 
 <form method="POST" action="/category/edit">
@@ -13,15 +13,16 @@
     </div>
     <div class="form-group">
         <label for="_description">Description</label>
-        <input type="text" class="form-control" id="_description" name="description"
-            value="{{ $category->description }}">
+        <input type="text" class="form-control" id="_description" name="description" value="{{ $category->description }}">
     </div>
+
+   
 
     <div>
         <label for="_parent_category_id">Parent category</label>
         <select id="_parent_category_id" name="parent_category_id">
             @foreach ($parents as $parent)
-                <option value="{{ $parent->id }}"> {{ $parent->name }}</option>
+            <option value="{{ $parent->id }}"> {{ $parent->name }}</option>
             @endforeach
         </select>
     </div>
