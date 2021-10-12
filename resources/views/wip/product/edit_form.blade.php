@@ -1,5 +1,5 @@
 @isset($product)
-    @include('wip.product.show')
+@include('wip.product.show')
 @endisset
 
 
@@ -15,7 +15,10 @@
         <input type="text" class="form-control" id="_description" name="description" value="{{ $product->description }}">
     </div>
 
-
+    <div class="form-group">
+        <label for="_preis">Preis</label>
+        <input type="text" class="form-control" id="_preis" name="preis" value="{{ $product->preis }}">
+    </div>
 
 
     <div class="form-group">

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Shop\Category;
 use Illuminate\Http\Request;
 use App\Models\Shop\Product;
 
 class ProductController extends Controller
 {
-
+// create new product 
     public function  create()
     {
 
@@ -21,7 +22,7 @@ class ProductController extends Controller
         // return view('wip.category.form', ['category' => $category]);
 
         // shows the stored data
-        return view('wip.product.create_form', ['product' => $product]);
+        return view('wip.product.create_form', ['product' => $product,'categories'=>Category::all()]);
     }
 
 

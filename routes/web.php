@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Models\Shop\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,7 +46,7 @@ Route::get('/category/delete/{id}', [CategoryController::class, 'delete']);
 
 // get method product form 
 Route::get('/product/create', function () {
-    return view('wip.product.create_form');
+    return view('wip.product.create_form',['categories'=>Category::all()]);
 });
 
 
