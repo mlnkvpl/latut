@@ -41,8 +41,7 @@ Route::post('/category/edit', [CategoryController::class, 'update']);
 Route::get('/category/delete/{id}', [CategoryController::class, 'delete']);
 
 
-################# Product ############################
-#
+################# Product ########################
 
 // get method product form 
 Route::get('/product/create', function () {

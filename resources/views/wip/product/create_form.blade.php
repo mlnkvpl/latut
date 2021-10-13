@@ -2,7 +2,7 @@
     @include('wip.product.show')
     @endisset
     @php
-    // dd($categories);
+     //dd($categories);
     @endphp
     @if (count($categories) != 0)
 
