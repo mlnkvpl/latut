@@ -83,6 +83,7 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->delete();
 
-        return $this->view();
+        // return $this->view();
+        return back();
     }
 }
