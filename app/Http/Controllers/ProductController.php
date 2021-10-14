@@ -17,6 +17,8 @@ class ProductController extends Controller
         // dump($input);
 
         $product = new Product($input);
+
+
         $product->save();
 
         // return view('wip.category.form', ['category' => $category]);
