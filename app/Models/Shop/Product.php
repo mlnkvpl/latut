@@ -33,13 +33,8 @@ class Product extends Model
         return $this->belongsTo(Discount::class, 'discount_id');
     }
 
-    public function setDiscount(Discount $discount){
-
-
-$this->discount_id= 
-
+    public function setDiscount(Discount $discount)
+    {
+        $this->discount_id = $discount->id;
     }
-
-
-    
 }

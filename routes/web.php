@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\DiscountController;
 use App\Models\Shop\Category;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +24,7 @@ Route::get('/', function () {
 
 
 Route::get('/test', function () {
-   echo 'test';
+    echo 'test';
 });
 
 ################# Category ############################
@@ -33,7 +34,7 @@ Route::get('/category', function () {
     return view('wip.category.form');
 });
 
-Route::post('/category', [CategoryController::class,'store']);
+Route::post('/category', [CategoryController::class, 'store']);
 
 Route::get('/categories', [CategoryController::class, 'view']);
 Route::get('/category/edit/{id}', [CategoryController::class, 'edit']);
@@ -45,7 +46,7 @@ Route::get('/category/delete/{id}', [CategoryController::class, 'delete']);
 
 // get method product form 
 Route::get('/product/create', function () {
-    return view('wip.product.create_form',['categories'=>Category::all()]);
+    return view('wip.product.create_form', ['categories' => Category::all()]);
 });
 
 
@@ -62,3 +63,27 @@ Route::get('/product/destroy/{product}', [ProductController::class, 'destroy']);
 
 // index product
 Route::get('/product', [ProductController::class, 'index']);
+
+
+############### Discount ############################
+
+// get method discount form 
+Route::get('/discount/create_form', function () {
+    return view('wip.discount.create_form');
+});
+
+// create discount 
+Route::post('/discount/create_form', [DiscountController::class, 'create']);
+
+// edit discount 
+Route::get('/discount/edit/{discount}', [DiscountController::class, 'edit']);
+
+// update discount 
+Route::post('/discount/edit/{discount}', [DiscountController::class, 'update']);
+
+
+// update delete 
+Route::get('/discount/destroy/{discount}', [DiscountController::class, 'destroy']);
+
+// index discount
+Route::get('/discounts', [DiscountController::class, 'index']);

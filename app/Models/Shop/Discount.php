@@ -9,7 +9,15 @@ class Discount extends Model
 {
     use HasFactory;
 
+protected $fillable =[
 
+    'name',
+    'description',
+    'percentage',
+    'start_date',
+    'end_date',
+    
+];
     public function products()
     {
 

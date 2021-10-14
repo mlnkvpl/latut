@@ -57,7 +57,7 @@ class CategoryController extends Controller
         $category = Category::find($request->id);
         $category->name = $request->name;
         $category->description = $request->description;
-       
+
         $category->parent_category_id = $request->parent_category_id;
         $parents=Category::where('id','!=',$request->id)->get();
 
