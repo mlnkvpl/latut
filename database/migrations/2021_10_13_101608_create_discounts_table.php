@@ -17,10 +17,9 @@ class CreateDiscountsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->string('image')->nullable();
-            $table->decimal('amount')->nullable();
-            $table->date('duration');
-            $table->double('new_preis');
+            $table->decimal('percentage');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->timestamps();
         });
     }
